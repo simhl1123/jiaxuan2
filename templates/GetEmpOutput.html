@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Information</title>
+</head>
+<center>
+	<font color="black" size="5" style="font-family: avenir">
+
+		<h1 style="color: DodgerBlue">Employee Information</h1>
+
+		<body bgcolor="lightgrey">
+
+			<form action="/getempoutput" autocomplete="on" method = "GET">
+
+				<div>
+
+			  		Employee ID:<br> {{ id }} <br><br>
+
+			  		Name:<br>{{ name }}<br><br>
+
+			  		Payscale:<br> {{ payscale }} <br><br>
+
+			  		Department:<br> {{ department }} <br><br>
+
+					Hire Date:<br> {{ hire_date }} <br><br>
+
+					
+					<a href="{{ url_for('getInfo') }}" class="button" style="margin-right: 2vw;">ReSET</a>
+					<br><br>
+					
+
+			  		<br><br>
+
+			  	</div>
+
+			</form>
+
+		</body>
+
+	</font>
+</center>
+</html>

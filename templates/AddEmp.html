@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Employee Information</title>
+</head>
+<header>
+</header>
+<style>
+    
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+header {
+    width: 98%;
+    height: 100%;
+}
+.get_emp_info[type=submit]{
+    color: yellow;
+}
+input{
+    margin-right: 50px;
+}
+.llll {
+    font-size: xx-large;
+    color: green;
+    font-family: 'Sansita Swashed', cursive;
+}
+h1{font-size: xx-large;
+    color: green;
+    font-family: 'Sansita Swashed', cursive;
+    margin-left: 10px;
+}
+fieldset {
+    padding: 10px;
+}
+.upperpart {
+    display: flex;
+}
+.submitButton[type=submit] {
+    font-size: x-large;
+    background-color: orange;
+    border: 1px solid orange;
+    border-radius: 50px;
+    color: white;
+    padding: 5px;
+    margin: 10px;
+    cursor: pointer;
+    float: right;
+}
+
+</style>
+<center>
+    <font color="black" size="4" style="font-family: avenir">
+
+        <h1>Employee Database</h1>
+        <div class="function">
+            <a href="{{ url_for('getInfo') }}" class="button" style="margin-right: 2vw;">GET EMPLOYEE INFORMATION</a>
+            <br>
+            <a href="{{ url_for('deleteInfo') }}" class="button" style="margin-right: 2vw;">Delete Employee</a>
+            <br>
+            <a href="{{ url_for('markAttend') }}" class="button" style="margin-right: 2vw;">Mark Attendence</a>
+            <br>
+        </div>
+    </center>    
+<right>
+        <body bgcolor="white">
+            
+            <form action="/addemp" autocomplete="on" method="POST" enctype="multipart/form-data">
+                <div class="upperpart">
+                 <fieldset id="remark">
+                  <legend class="llll">Employee Information</legend>
+                 <br><br>
+                 <label for="EmpInFomethod">
+                    Employee ID:<input style="height:25px;margin-left: 10px;font-size:14pt; color:grey;" type="number" name="emp_id" autofocus size="40"><br><br>
+
+                    Name:<input style="height:25px;margin-left: 60px;font-size:14pt;color:grey;" type="text" name="emp_name"><br><br>
+
+                    Payscale:<input style="height:25px;margin-left: 40px;font-size:14pt;color:grey;" type="number" name="Payscale"><br><br> 
+
+                    Department:<input style ="height:25px;margin-left: 20px;font-size:14pt;color:grey;" type="text" name="Department"><br><br> 
+
+                    Hire Date:<input style="height:25px;;margin-left: 35px;font-size:14pt;color:grey;" type="date" name="Hire_Date"><br><br> 
+                 </label>
+                 </fieldset>
+
+                 <fieldset id="Img">
+                 <legend class="llll">Image</legend>
+                  Image:<input type=file name="emp_image_file" style="height:25px;font-size:14pt;color:grey;"> <br><br>
+                 <textarea name="remark" id="remark" rows="10" cols="40" ></textarea>
+                 </fieldset>
+                </div>
+                
+                <center>
+                    <button class="submitButton" type="submit">UPDATE DATABASE</button>
+                    </center>
+                
+            </form>
+            
+        </body>
+
+    </font>
+</right>
+<!-- </center> -->
+
+</html>

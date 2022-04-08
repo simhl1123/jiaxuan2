@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Attendence</title>
+</head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+  }
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+</style>
+<body>
+    <form action="/mark" autocomplete="on" method="POST" enctype="multipart/form-data">
+        <p>Date/Time: <span id="datetime"></span></p>
+        <table>
+            <tr>
+                <th>Employee ID.</th>
+                <th>Employee Name.</th>
+                <th>Department</th>
+                <th colspan="2">Attend.</th>
+
+            </tr>
+            {% for item in emplist %}
+            <tr>
+                <td>{{ item[0] }}</td>
+                <td>{{ item[1] }}</td>
+                <td>{{ item[3] }}</td>
+                <td><input type="checkbox" name="attend" value="YES"><label>YES</label></td>
+                <td><input type="checkbox" name="attend" value="NO" ><label>No</label></td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+        <button class="submitButton" type="submit">UPDATE DATABASE</button>
+    </form>
+        
+</body>
+<script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = dt.toLocaleString();
+    </script>
+</html>
